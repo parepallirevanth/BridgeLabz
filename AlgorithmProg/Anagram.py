@@ -17,7 +17,7 @@ def Anagram(string1, string2):
     else:
         print("Strings are not anagram")
 
-
+#main
 if __name__ == '__main__':
     string1 = input("Enter first string")
     string2 = input("Enter second string")
