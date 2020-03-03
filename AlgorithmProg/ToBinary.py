@@ -42,10 +42,16 @@ def decomposition(binary_decompose):
         if binary[index] == 1:
             print(2 ** (32 - index - 1), end=' ')
 
+# function to print binary
+def binary_print(binary):
+    for i in binary:
+        print(i,end='')
 
+# driver program
 if __name__ == '__main__':
     # calling dec to binary function
     binary = dec_to_binary1()
-    print(binary)
+    binary_print(binary)
+    print()
     # calling function to ensure decomposition
     decomposition(binary)

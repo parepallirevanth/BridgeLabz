@@ -6,13 +6,13 @@
 # bubbleSort method for String
 # ---------------------------------------------------------
 
-class utility():
+class Utility():
     # -----------------------Binary search--------------------------#
     # function for binary search of integers
     @staticmethod
     def binarysearch_int(a, l, h, num):
         # calling  sorting method to sort array
-        #utility.insertionsort_int(a)
+        # utility.insertionsort_int(a)
         a.sort()
         if h >= l:
             # find the mid loc of subarray
@@ -23,10 +23,10 @@ class utility():
             # compares element of mid and given element
             # if mid > search element mid is set as high(end loc)
             elif a[mid] > num:
-                return utility.binarysearch_int(a, l, mid - 1, num)
+                return Utility.binarysearch_int(a, l, mid - 1, num)
             # if search ele is greater than mid element then mid is set as start
             else:
-                return utility.binarysearch_int(a, mid + 1, h, num)
+                return Utility.binarysearch_int(a, mid + 1, h, num)
         else:
             return 'num is not found'
 
@@ -44,10 +44,10 @@ class utility():
             # compares element of mid and given element
             # if mid > search element mid is set as high(end loc)
             elif a[mid] > string:
-                return utility.binaryserach_string(a, l, mid - 1, string)
+                return Utility.binaryserach_string(a, l, mid - 1, string)
             # if search ele is greater than mid element then mid is set as start
             else:
-                return utility.binaryserach_string(a, mid + 1, h, string)
+                return Utility.binaryserach_string(a, mid + 1, h, string)
         else:
             return 'string is not found'
 

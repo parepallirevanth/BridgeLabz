@@ -40,6 +40,6 @@ def binaryserach_words(word_list, l, h, word):
     else:
         return 'word not found'
 
-
+# driver program
 if __name__ == '__main__':
     words_read()
