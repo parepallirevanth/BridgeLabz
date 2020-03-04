@@ -3,33 +3,40 @@
 
 # primenumber function
 
-def PrimeNumber(primes_range):
-    primes = []
-    # Iterates upto the given range
-    for num in range(0, primes_range + 1):
+def primeNumber(min_range,max_range):
+        primes = []
+        # Iterates upto the given range
+        for num in range(min_range, max_range + 1):
 
-        # Skip 1 and 0
-        # prime nor composite
-        if num == 1 or num == 0:
-            continue
+            # Skip 1 and 0
+            # prime nor composite
+            if num == 1 or num == 0:
+                continue
 
-        # flag variable to tell
-        # if i is prime or not
-        flag = 1
+            # flag variable to tell
+            # if i is prime or not
+            flag = 1
 
-        for j in range(2, num // 2 + 1):
-            if (num % j == 0):
-                flag = 0
-                break
+            for j in range(2, num // 2 + 1):
+                if (num % j == 0):
+                    flag = 0
+                    break
 
-        # flag = 1 means i is prime
-        # and flag = 0 means i is not prime
-        if (flag == 1):
-            primes.append(str(num))
-    return primes
+            # flag = 1 means i is prime
+            # and flag = 0 means i is not prime
+            if (flag == 1):
+                primes.append(str(num))
+
+        return primes
 
 
 # driver program
 if __name__ == '__main__':
-    Range_of_primes = int(input("Enter the range of prime number needed:"))
-    print(PrimeNumber(Range_of_primes))
+    try:
+        min_range = int(input("Enter the min range of prime number needed:"))
+        max_range  = int(input("Enter the max range of prime number needed:"))
+        print(primeNumber(min_range,max_range))
+    except Exception:
+        print("Error: Enter numbers only")
+
+

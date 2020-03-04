@@ -2,7 +2,7 @@
 # Palindrome
 # ---------------------------------------------------------------------------
 # primenumber function
-from AlgorithmProg.PrimeNumbers import PrimeNumber
+from AlgorithmProg.PrimeNumbers import primeNumber
 
 
 # checks the anagrams in primes
@@ -16,5 +16,9 @@ def Prime_Anagram(primes):
 # driver program
 if __name__ == '__main__':
     # primesnum_obj=PrimeNumber()
-    Range_of_primes = int(input("Enter the range of prime number to check anagram:"))
-    Prime_Anagram((PrimeNumber(Range_of_primes)))
+    try:
+        min_range = int(input("Enter the min range of prime number to check anagram:"))
+        max_range = int(input("Enter the min range of prime number to check anagram:"))
+        Prime_Anagram((primeNumber(min_range,max_range)))
+    except Exception:
+        print("Error: enter integer numbers only")

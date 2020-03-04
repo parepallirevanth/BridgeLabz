@@ -16,7 +16,7 @@ class Queue:
         self.count = 0
 
     # function to add elements to queue
-    def enqueue(self, item):
+    def enque(self, item):
         # creating as node
         node = Node(item)
         # if queue is empty
@@ -32,7 +32,7 @@ class Queue:
         self.count = self.count + 1
 
     # function to delete elements from queue
-    def dequeue(self):
+    def deque(self):
         # if queue is empty
         if self.front is None:
             return "queue is empty"
