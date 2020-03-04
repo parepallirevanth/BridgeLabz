@@ -23,7 +23,7 @@ def OrderdInsert():
             # STORING DATA  into list
             words_list.insertorder(int(j))
     file.close()
-    print(type(words_list))
+    #print(type(words_list))
     return words_list
 
 

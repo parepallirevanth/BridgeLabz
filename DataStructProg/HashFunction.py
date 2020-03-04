@@ -11,28 +11,87 @@
 # d. O/P ­> Save the numbers in a file
 # ----------------------------------------------------------------------------------------
 
-hash_table = [[] for _ in range(11)]
-
-
 # hash function
-def hashing_func(key):
-    return key % 11 #len(hash_table)
+def hashing_func(value):
+    return hash(value) % len(hash_table)  # len(hash_table) = 11
 
 
 # function to append
-def insert( hash_table,key,value):
-    hash_key = hashing_func(key)
+def insert(hash_table, value):
+    # finding the pos of the value
+    # hk = hash(1) % 11
+    hash_key = hashing_func(value)
+    # adding values to the hashtable
     hash_table[hash_key].append(value)
+    hash_table[hash_key].sort()
 
+# function to search
+def search(hash_table, key):
+    # finding the pos of value
+    hash_key = hashing_func(key)
+    bucket = hash_table[hash_key]
+    #iterates the list upto end
+    for i in enumerate(bucket):
+        k, v = i #(0,44) (1,55) (2,77)
+        # equates the value
+        # if found then pops the value
+        if key == v:
+            return delete(hash_table, v,k,bucket)
+        # else add the value to hashtable
+    print('Key {} added'.format(key))
+    return insert(hash_table, key)
+
+# function to delete
+def delete(hash_table, v,k,bucket):
+    # deletes the value at positin
+    del bucket[k]
+    print('Key {} deleted'.format(v))
+    return hash_table
+
+# function to read from file
+def readfile():
+      try:
+        # def words_read():
+        file = open("hash_num", "r")
+        # created a linked list
+        words_list = []
+        # storing the elements into list
+        for i in file:
+            str_x = i.split(',')
+            for j in str_x:
+                # STORING DATA  into list
+                words_list.append(int(j))
+        file.close()
+      except Exception:
+          print("File not found")
+      return words_list
+
+# function to write into file
+
+def writefile(words_list):
+    # def words_read():
+    file = open("hash_num1", "w")
+    for i in range(len(words_list)):
+        for j in words_list[i]:
+            if j:
+                file.write("{} ".format(j))
+    file.close()
+
+# driver program
 if __name__ == '__main__':
-    print(len(hash_table))
-    print (hashing_func(10))
-    print (hashing_func(20))
-    print (hashing_func(25))
-    # inser
-    insert(hash_table,10,'Nepal')
-    print(hash_table)
-    insert(hash_table,25,'USA')
-    print(hash_table)
-    insert(hash_table,20,'India')
-    print(hash_table)
+    hash_table = [[] for _ in range(11)]
+    a = readfile()
+    # printing elements in file
+    for index in a:
+        insert(hash_table, index)
+    try:
+        # i/p integer to search
+        search_key = int(input("Enter a number to search: "))
+        print(hash_table)
+        # calling function to search
+        sk = search(hash_table, search_key)
+        print(hash_table)
+        print("Written in file: check file hash_num1")
+        writefile(hash_table)
+    except Exception:
+        print("Error: please insert numbers only:")
