@@ -1,0 +1,32 @@
+{
+  "Users": [
+    {
+      "Revanth": [{
+        "Full Name": "Revanth P",
+        "Phone no": 9160582246
+      }],
+      "Murali":[
+        {
+          "Full name": "Murali Reddy",
+          "Phone no": 3617637812
+        }
+      ],
+      "Sumanth":[
+
+        {
+        "Full Name": "P Sumanth",
+          "Phone no": 9037297821
+
+      }
+      ],
+      "Subh":[
+
+        {
+        "Full Name": "Subham Agarwal",
+          "Phone no": 9230864828
+      }
+
+
+    ]}
+    ]
+}
