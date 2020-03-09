@@ -1,9 +1,9 @@
 # week Object of calender
-
+# importing required modules and packages
 from DataStructProg.Calender import calender
 from DataStructProg.Queue import Queue
 
-
+# Node class
 class Node:
 
     def __init__(self, day, date):
@@ -11,7 +11,7 @@ class Node:
         self.date = date
         self.next = None
 
-
+# weak class
 class weak:
     # creating head variable and initialize as none
     def __init__(self):

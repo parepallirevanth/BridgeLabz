@@ -1,25 +1,24 @@
 # Calender
-import cmath
 from math import floor
 
 
+# calender class
 class calender:
 
     # getting day of the week od 1st day from given month and year
     def day_of_the_week(self, year, month, day=1):
         # assigning the year and month values to variable
-        y = year
         m = month
         d = day
         k = d
-        c = year//100
-        y = year%100
-        if  m == 1 or m == 2:
+        c = year // 100
+        y = year % 100
+        if m == 1 or m == 2:
             m = m + 10
         else:
-            m = m-2
-        d0= (k + floor(2.6 * m - 0.2) - 2 * c + y + floor(y/4) + floor(c/4))%7
-       # print(W)
+            m = m - 2
+        d0 = (k + floor(2.6 * m - 0.2) - 2 * c + y + floor(y / 4) + floor(c / 4)) % 7
+        # print(W)
         # days = {1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"}
         return d0
 
@@ -86,9 +85,11 @@ class calender:
             month.append(temp)
         return month
 
-# driver program
+
+'''# driver program
 if __name__ == '__main__':
     ob = calender()
     year = int(input("year"))
     month = int(input("month"))
     print(ob.day_of_the_week(year,month))
+'''
