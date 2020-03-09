@@ -1,9 +1,11 @@
+# ---------------------------- Ordered List---------------------------------#
+# Node class
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
-
+# Ordered List Class
 class OrderedList:
     # the 1st element of the list is called Head
     # intilizing head = None
@@ -176,5 +178,3 @@ class OrderedList:
     # isEmpty function
     def isempty(self):
         return self.head == None
-
-# to Lower

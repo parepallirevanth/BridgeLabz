@@ -31,7 +31,8 @@ class Prime:
         if count == 0:
             return True
 
-# crating a function to get the anagram number
+#  function to get the anagram number
+    # reversing a number
     def anagram(self, num):
         temp = 0
         while num >= 10:

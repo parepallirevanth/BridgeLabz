@@ -2,8 +2,8 @@
 # in a Queue using the Linked List and Print the Anagrams from the Queue.
 # Note no Collection Library can be used.
 # --------------------------------------------------------------------------
-from DataStructProg.Queue import Queue, Node
 from DataStructProg.Primes_util import Prime
+from DataStructProg.Queue import Queue
 
 queue = Queue()
 prm = Prime()
